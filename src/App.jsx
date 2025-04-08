@@ -1,9 +1,12 @@
 import "./App.css";
+import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   return (
     <>
-      <h1 className="bg-blue-500">Hello</h1>
+      <div className=" max-w-screen-2xl mx-auto">
+        <Navbar></Navbar>
+      </div>
     </>
   );
 }
