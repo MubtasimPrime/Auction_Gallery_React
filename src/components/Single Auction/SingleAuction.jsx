@@ -16,7 +16,7 @@ const SingleAuction = ({ data }) => {
   return (
     <>
       {/* row  */}
-      <tr>
+      <tr className="text-[18px] text-[#0E2954]">
         <td>
           <img
             className="w-24 h-24 object-cover rounded-sm"
@@ -25,9 +25,9 @@ const SingleAuction = ({ data }) => {
           />
         </td>
         <td>{data.title}</td>
-        <td>{data.currentBidPrice}</td>
-        <td>{data.timeLeft}</td>
-        <td>
+        <td className="text-center">{data.currentBidPrice}</td>
+        <td className="text-center">{data.timeLeft}</td>
+        <td className="text-center">
           <button
             onClick={() => {
               heart();
@@ -43,7 +43,6 @@ const SingleAuction = ({ data }) => {
           </button>
         </td>
       </tr>
-      {/* <ToastContainer /> */}
     </>
   );
 };
