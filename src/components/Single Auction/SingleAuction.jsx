@@ -1,12 +1,17 @@
 import React, { useState } from "react";
 import { GoHeart } from "react-icons/go";
 import { GoHeartFill } from "react-icons/go";
+import { ToastContainer, toast } from "react-toastify";
 
 const SingleAuction = ({ data }) => {
   // console.log(data);
   const [heartColor, setHeartColor] = useState(false);
 
+  // Red Heart Disabled
   const heart = () => setHeartColor(true);
+
+  // Toast
+  const notify = () => toast("An item is added to favorites");
 
   return (
     <>
@@ -23,7 +28,13 @@ const SingleAuction = ({ data }) => {
         <td>{data.currentBidPrice}</td>
         <td>{data.timeLeft}</td>
         <td>
-          <button onClick={heart} disabled={heartColor}>
+          <button
+            onClick={() => {
+              heart();
+              notify();
+            }}
+            disabled={heartColor}
+          >
             {heartColor ? (
               <GoHeartFill className="text-red-500 w-6 h-6 cursor-not-allowed duration-200 hover:scale-110 transition-transform" />
             ) : (
@@ -32,6 +43,7 @@ const SingleAuction = ({ data }) => {
           </button>
         </td>
       </tr>
+      {/* <ToastContainer /> */}
     </>
   );
 };
