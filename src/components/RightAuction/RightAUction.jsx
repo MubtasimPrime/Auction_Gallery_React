@@ -6,10 +6,10 @@ const RightAUction = ({ item, setItem }) => {
   // console.log(items);
 
   // Total price count
-  const totalAmount = item.reduce(
-    (total, item) => total + item.currentBidPrice,
-    0
-  );
+  const totalAmount = item.reduce((total, item) => {
+    const numberPrice = Number(item.currentBidPrice.replace(/,/g, ""));
+    return total + numberPrice;
+  }, 0);
 
   // Remove items
 
