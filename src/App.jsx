@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+import { Suspense, useEffect, useState } from "react";
 import "./App.css";
 import Auction from "./components/Auction/Auction";
 import Banner from "./components/Banner/Banner";
@@ -8,7 +8,21 @@ import { ToastContainer } from "react-toastify";
 import RightAUction from "./components/RightAuction/RightAUction";
 
 function App() {
-  const infoJson = fetch("info.json").then((res) => res.json());
+  const [infoJson, setInfoJson] = useState([]);
+  const [item, setItem] = useState([]);
+
+  // heart click
+  const clickHeartBtn = (newItem) => {
+    setItem([...item, newItem]);
+    console.log(newItem);
+  };
+
+  useEffect(() => {
+    fetch("info.json")
+      .then((res) => res.json())
+      .then((data) => setInfoJson(data));
+  }, []);
+
   return (
     <>
       <ToastContainer />
@@ -35,12 +49,15 @@ function App() {
                 <span className="loading loading-dots loading-lg"></span>
               }
             >
-              <Auction infoJson={infoJson}></Auction>
+              <Auction
+                clickHeartBtn={clickHeartBtn}
+                infoJson={infoJson}
+              ></Auction>
             </Suspense>
           </div>
           {/* Right */}
           <div className="w-[30%]">
-            <RightAUction></RightAUction>
+            <RightAUction setItem={setItem} item={item}></RightAUction>
           </div>
         </div>
       </div>

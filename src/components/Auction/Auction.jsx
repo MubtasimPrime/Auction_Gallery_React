@@ -1,8 +1,8 @@
-import React, { use } from "react";
+import React from "react";
 import SingleAuction from "../Single Auction/SingleAuction";
 
-const Auction = ({ infoJson }) => {
-  const jsonData = use(infoJson);
+const Auction = ({ infoJson, clickHeartBtn }) => {
+  // const jsonData = use(infoJson);
   //   console.log(jsonData);
 
   return (
@@ -22,8 +22,12 @@ const Auction = ({ infoJson }) => {
             </tr>
           </thead>
           <tbody>
-            {jsonData.map((data) => (
-              <SingleAuction key={data.id} data={data}></SingleAuction>
+            {infoJson.map((data) => (
+              <SingleAuction
+                key={data.id}
+                data={data}
+                clickHeartBtn={clickHeartBtn}
+              ></SingleAuction>
             ))}
           </tbody>
         </table>

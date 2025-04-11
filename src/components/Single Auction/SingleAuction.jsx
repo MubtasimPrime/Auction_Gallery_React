@@ -3,7 +3,7 @@ import { GoHeart } from "react-icons/go";
 import { GoHeartFill } from "react-icons/go";
 import { ToastContainer, toast } from "react-toastify";
 
-const SingleAuction = ({ data }) => {
+const SingleAuction = ({ data, clickHeartBtn }) => {
   // console.log(data);
   const [heartColor, setHeartColor] = useState(false);
 
@@ -32,6 +32,7 @@ const SingleAuction = ({ data }) => {
             onClick={() => {
               heart();
               notify();
+              clickHeartBtn(data);
             }}
             disabled={heartColor}
           >
