@@ -19,18 +19,18 @@ const SingleAuction = ({ data, clickHeartBtn }) => {
   return (
     <>
       {/* row  */}
-      <tr className="text-[18px] text-[#0E2954]">
+      <tr className="text-[17.5px] text-[#0E2954]">
         <td>
           <img
-            className="w-24 h-24 object-cover rounded-sm"
+            className="w-24 h-24 object-cover rounded-sm ml-6"
             src={data.image}
             alt="image"
           />
         </td>
         <td>{data.title}</td>
-        <td className="text-center">{data.currentBidPrice}</td>
+        <td className="text-center">${data.currentBidPrice}</td>
         <td className="text-center">{data.timeLeft}</td>
-        <td className="text-center">
+        <td className="text-center pr-10">
           <button
             onClick={() => {
               heart();
