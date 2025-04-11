@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <div>
-      <footer className=" flex flex-col justify-center items-center footer-center p-10">
+      <footer className=" flex flex-col justify-center items-center footer-center py-20">
         <div className="mb-3 poppins">
           <a href="#" className="text-3xl">
             <span className="text-[#003EA4]">Auction</span>

@@ -9,7 +9,7 @@ const Banner = () => {
           <br />
           Around the World
         </h1>
-        <p className="text-2xl font-light mb-8">
+        <p className="text-[22px] font-light mb-8">
           Discover rare collectibles, luxury goods, and vintage
           <br />
           treasures in our curated auctions
