@@ -11,7 +11,10 @@ const SingleAuction = ({ data, clickHeartBtn }) => {
   const heart = () => setHeartColor(true);
 
   // Toast
-  const notify = () => toast("An item is added to favorites");
+  const notify = () =>
+    toast.success("An item is added to favorites", {
+      autoClose: 1500,
+    });
 
   return (
     <>
