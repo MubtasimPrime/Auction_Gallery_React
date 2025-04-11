@@ -11,6 +11,8 @@ const RightAUction = ({ item, setItem }) => {
     return total + numberPrice;
   }, 0);
 
+  const totalFormattedAmount = totalAmount.toLocaleString();
+
   // Remove items
 
   const removeItem = (itemRemove) => {
@@ -85,15 +87,15 @@ const RightAUction = ({ item, setItem }) => {
           )}
           {item.length > 0 ? (
             <div className="flex justify-between px-8 py-4">
-              <h3 className="text-[26px]">Total bids Amount</h3>
-              <h3 className="text-[26px]">${totalAmount.toFixed(2)}</h3>
+              <h3 className="text-[24px]">Total bids Amount</h3>
+              <h3 className="text-[24px]">${totalFormattedAmount}</h3>
             </div>
           ) : (
             <tr>
               <td>
                 <div className="flex justify-between px-8 py-4">
-                  <h3 className="text-[26px] font-medium">Total bids Amount</h3>
-                  <h3 className="text-[26px] font-medium">$0,000</h3>
+                  <h3 className="text-[24px] font-medium">Total bids Amount</h3>
+                  <h3 className="text-[24px] font-medium">$0,000</h3>
                 </div>
               </td>
             </tr>
