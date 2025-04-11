@@ -33,7 +33,7 @@ const RightAUction = ({ item, setItem, setEnableHeartId, enableHeartId }) => {
         <thead>
           <tr>
             <th>
-              <div className="flex items-center gap-4 justify-center text-[30px] text-[#0E2954] h-16">
+              <div className="flex items-center gap-4 justify-center text-[28px] text-[#0E2954] h-16">
                 <GoHeart className="w-8 h-8"></GoHeart>
                 Favorite Items
               </div>
@@ -46,10 +46,10 @@ const RightAUction = ({ item, setItem, setEnableHeartId, enableHeartId }) => {
             <tr>
               <td>
                 <div className="flex flex-col justify-center items-center text-center">
-                  <h1 className="text-[26px] font-medium mt-8">
+                  <h1 className="text-[26px] font-medium mt-5">
                     No favorites yet
                   </h1>
-                  <p className="mt-4 text-gray-500 text-[18px] mb-8 w-[300px]">
+                  <p className="mt-4 text-gray-500 text-[17px] mb-5 w-[300px]">
                     Click the heart icon on any item to add it to your favorites
                   </p>
                 </div>
@@ -101,7 +101,9 @@ const RightAUction = ({ item, setItem, setEnableHeartId, enableHeartId }) => {
               <td>
                 <div className="flex justify-between px-8 py-4">
                   <h3 className="text-[24px]">Total bids Amount</h3>
-                  <h3 className="text-[24px]">${totalFormattedAmount}</h3>
+                  <h3 className="text-[24px] font-medium">
+                    ${totalFormattedAmount}
+                  </h3>
                 </div>
               </td>
             </tr>
@@ -109,7 +111,7 @@ const RightAUction = ({ item, setItem, setEnableHeartId, enableHeartId }) => {
             <tr>
               <td>
                 <div className="flex justify-between px-8 py-4">
-                  <h3 className="text-[24px] font-medium">Total bids Amount</h3>
+                  <h3 className="text-[24px]">Total bids Amount</h3>
                   <h3 className="text-[24px] font-medium">$0,000</h3>
                 </div>
               </td>
