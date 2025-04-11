@@ -11,12 +11,20 @@ function App() {
   const [infoJson, setInfoJson] = useState([]);
   const [item, setItem] = useState([]);
 
+  // for enable Heart again
+  const [enableHeartId, setEnableHeartId] = useState([]);
+
   // heart click
   const clickHeartBtn = (newItem) => {
     setItem([...item, newItem]);
+
+    // Catching Id
+    setEnableHeartId([...enableHeartId, newItem.id]);
+    console.log(newItem.id);
     console.log(newItem);
   };
 
+  // Fetch
   useEffect(() => {
     fetch("info.json")
       .then((res) => res.json())
@@ -52,12 +60,18 @@ function App() {
               <Auction
                 clickHeartBtn={clickHeartBtn}
                 infoJson={infoJson}
+                enableHeartId={enableHeartId}
               ></Auction>
             </Suspense>
           </div>
           {/* Right */}
           <div className="w-[30%]">
-            <RightAUction setItem={setItem} item={item}></RightAUction>
+            <RightAUction
+              enableHeartId={enableHeartId}
+              setEnableHeartId={setEnableHeartId}
+              setItem={setItem}
+              item={item}
+            ></RightAUction>
           </div>
         </div>
       </div>

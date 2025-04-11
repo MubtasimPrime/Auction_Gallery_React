@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import { GoHeart } from "react-icons/go";
 import { GoHeartFill } from "react-icons/go";
 import { toast } from "react-toastify";
 
-const SingleAuction = ({ data, clickHeartBtn }) => {
+const SingleAuction = ({ data, clickHeartBtn, enableHeartId }) => {
   // console.log(data);
-  const [heartColor, setHeartColor] = useState(false);
+  // const [heartColor, setHeartColor] = useState(false);
 
-  // Red Heart Disabled
-  const heart = () => setHeartColor(true);
+  // // Red Heart Disabled
+  // const heart = () => setHeartColor(true);
 
   // Toast
   const notify = () =>
@@ -33,13 +33,14 @@ const SingleAuction = ({ data, clickHeartBtn }) => {
         <td className="text-center pr-10">
           <button
             onClick={() => {
-              heart();
+              // heart();
               notify();
               clickHeartBtn(data);
+              // rightAuction
             }}
-            disabled={heartColor}
+            disabled={enableHeartId}
           >
-            {heartColor ? (
+            {enableHeartId ? (
               <GoHeartFill className="text-red-500 w-6 h-6 cursor-not-allowed duration-200 hover:scale-110 transition-transform" />
             ) : (
               <GoHeart className="text-[#0E2954] w-6 h-6 cursor-pointer hover:text-red-500 duration-200 hover:scale-110 transition-transform" />

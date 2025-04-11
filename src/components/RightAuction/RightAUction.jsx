@@ -1,8 +1,9 @@
 import React from "react";
 import { GoHeart } from "react-icons/go";
 import { IoClose } from "react-icons/io5";
+import { toast } from "react-toastify";
 
-const RightAUction = ({ item, setItem }) => {
+const RightAUction = ({ item, setItem, setEnableHeartId, enableHeartId }) => {
   // console.log(items);
 
   // Total price count
@@ -17,7 +18,13 @@ const RightAUction = ({ item, setItem }) => {
 
   const removeItem = (itemRemove) => {
     setItem(item.filter((item) => item.id !== itemRemove.id));
+    setEnableHeartId(enableHeartId.filter((id) => id !== itemRemove.id));
   };
+
+  const notifyError = () =>
+    toast.warning("Item Removed From Favorites", {
+      autoClose: 1500,
+    });
 
   return (
     <div className="overflow-x-auto rounded-3xl border border-base-content/5 bg-base-100">
@@ -49,8 +56,8 @@ const RightAUction = ({ item, setItem }) => {
               </td>
             </tr>
           ) : (
-            item.map((item) => (
-              <tr>
+            item.map((item, id) => (
+              <tr key={id}>
                 <td>
                   <div className="flex justify-between">
                     {/* img div */}
@@ -74,10 +81,13 @@ const RightAUction = ({ item, setItem }) => {
                     {/* Button div */}
                     <div>
                       <button
-                        onClick={() => removeItem(item)}
+                        onClick={() => {
+                          removeItem(item);
+                          notifyError();
+                        }}
                         className="text-black hover:text-red-500"
                       >
-                        <IoClose className="w-7 h-7" />
+                        <IoClose className="w-7 h-7 cursor-pointer" />
                       </button>
                     </div>
                   </div>
@@ -85,11 +95,16 @@ const RightAUction = ({ item, setItem }) => {
               </tr>
             ))
           )}
+
           {item.length > 0 ? (
-            <div className="flex justify-between px-8 py-4">
-              <h3 className="text-[24px]">Total bids Amount</h3>
-              <h3 className="text-[24px]">${totalFormattedAmount}</h3>
-            </div>
+            <tr>
+              <td>
+                <div className="flex justify-between px-8 py-4">
+                  <h3 className="text-[24px]">Total bids Amount</h3>
+                  <h3 className="text-[24px]">${totalFormattedAmount}</h3>
+                </div>
+              </td>
+            </tr>
           ) : (
             <tr>
               <td>

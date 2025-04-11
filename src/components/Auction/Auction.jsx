@@ -1,14 +1,13 @@
 import React from "react";
 import SingleAuction from "../Single Auction/SingleAuction";
 
-const Auction = ({ infoJson, clickHeartBtn }) => {
+const Auction = ({ infoJson, clickHeartBtn, enableHeartId }) => {
   // const jsonData = use(infoJson);
   //   console.log(jsonData);
 
   return (
     <>
-      {/* <h1>Json Data:{jsonData.length}</h1> */}
-      {/* Next component */}
+      {/* <h1>Json Data:{infoJson.length}</h1> */}
       <div className="rounded-3xl border border-base-content/5 bg-base-100">
         <table className="table mb-4">
           {/* head */}
@@ -27,6 +26,8 @@ const Auction = ({ infoJson, clickHeartBtn }) => {
                 key={data.id}
                 data={data}
                 clickHeartBtn={clickHeartBtn}
+                enableHeartId={enableHeartId.includes(data.id)}
+                // passing a boolean
               ></SingleAuction>
             ))}
           </tbody>
