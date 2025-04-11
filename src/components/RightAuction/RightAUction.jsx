@@ -37,25 +37,34 @@ const RightAUction = ({ item }) => {
           ) : (
             item.map((item) => (
               <tr>
-                <div>
-                  {/* img div */}
-                  <div>
-                    <img
-                      src={item.image}
-                      className="w-24 h-24 object-cover rounded-sm"
-                      alt="image"
-                    />
+                <td>
+                  <div className="flex justify-between">
+                    {/* img div */}
+                    <div>
+                      <img
+                        src={item.image}
+                        className="w-24 h-24 object-cover rounded-sm"
+                        alt="image"
+                      />
+                    </div>
+                    {/* Texts */}
+                    <div>
+                      <h1 className="text-[16px] font-medium w-[185px]">
+                        {item.title}
+                      </h1>
+                      <div className="flex gap-6 mt-4">
+                        <p className="text-[16px]">${item.currentBidPrice}</p>
+                        <p className="text-[16px]">Bids: {item.bidsCount}</p>
+                      </div>
+                    </div>
+                    {/* Button div */}
+                    <div>
+                      <button className="text-black hover:text-red-500">
+                        <IoClose className="w-7 h-7" />
+                      </button>
+                    </div>
                   </div>
-                  <div className="text-[16px] font-medium">{item.title}</div>
-                  <div className="text-[14px]">${item.currentBidPrice}</div>
-                  <div className="text-[14px]">Bids: {item.bidsCount}</div>
-                  {/* Button div */}
-                  <div>
-                    <button className="text-black hover:text-red-500">
-                      <IoClose className="w-7 h-7" />
-                    </button>
-                  </div>
-                </div>
+                </td>
               </tr>
             ))
           )}
