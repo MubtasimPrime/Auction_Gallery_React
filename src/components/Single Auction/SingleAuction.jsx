@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { GoHeart } from "react-icons/go";
 import { GoHeartFill } from "react-icons/go";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 const SingleAuction = ({ data, clickHeartBtn }) => {
   // console.log(data);
@@ -24,7 +24,7 @@ const SingleAuction = ({ data, clickHeartBtn }) => {
           <img
             className="w-24 h-24 object-cover rounded-sm"
             src={data.image}
-            alt=""
+            alt="image"
           />
         </td>
         <td>{data.title}</td>

@@ -2,13 +2,21 @@ import React from "react";
 import { GoHeart } from "react-icons/go";
 import { IoClose } from "react-icons/io5";
 
-const RightAUction = ({ item }) => {
+const RightAUction = ({ item, setItem }) => {
   // console.log(items);
 
+  // Total price count
   const totalAmount = item.reduce(
     (total, item) => total + item.currentBidPrice,
     0
   );
+
+  // Remove items
+
+  const removeItem = (itemRemove) => {
+    setItem(item.filter((item) => item.id !== itemRemove.id));
+  };
+
   return (
     <div className="overflow-x-auto rounded-box border border-base-content/5 bg-base-100">
       <table className="table">
@@ -59,7 +67,10 @@ const RightAUction = ({ item }) => {
                     </div>
                     {/* Button div */}
                     <div>
-                      <button className="text-black hover:text-red-500">
+                      <button
+                        onClick={() => removeItem(item)}
+                        className="text-black hover:text-red-500"
+                      >
                         <IoClose className="w-7 h-7" />
                       </button>
                     </div>

@@ -32,7 +32,7 @@ function App() {
       <Banner></Banner>
 
       {/* Auction part */}
-      <div className="bg-[#EBF0F5] pt-32 pb-28">
+      <div className="bg-[#EBF0F5] pt-32 pb-28 sora">
         <div className="max-w-screen-2xl mx-auto">
           <h1 className="mb-5 text-4xl font-medium text-[#0E2954]">
             Active Auctions

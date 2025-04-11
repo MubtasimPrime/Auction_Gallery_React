@@ -13,7 +13,7 @@ const Auction = ({ infoJson, clickHeartBtn }) => {
         <table className="table">
           {/* head */}
           <thead className="py-6">
-            <tr className="text-[20px] h-18 text-black">
+            <tr className="text-[18px] h-18 text-black">
               <th>Items</th>
               <th></th>
               <th className="text-center">Current Bid</th>

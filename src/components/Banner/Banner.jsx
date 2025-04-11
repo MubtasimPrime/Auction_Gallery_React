@@ -2,7 +2,7 @@ import React from "react";
 
 const Banner = () => {
   return (
-    <div className="banner-container bg-[url(/banner-img.svg)] bg-cover bg-center min-h-[calc(100vh-72px)] flex items-center">
+    <div className="banner-container bg-[url(/banner-img.svg)] bg-cover bg-center min-h-[calc(100vh-72px)] flex items-center sora">
       <div className="banner-text text-white max-w-screen-2xl w-full mx-auto">
         <h1 className="text-5xl font-semibold mb-5">
           Bid on Unique Items from

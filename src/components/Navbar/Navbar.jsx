@@ -2,7 +2,7 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <div>
+    <div className="poppins">
       {/* Main Div */}
       <div className="flex justify-between py-4">
         {/* Navbar Title */}
